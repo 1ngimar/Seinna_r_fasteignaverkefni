@@ -1,0 +1,115 @@
+---
+title: "Seinna R verkefni - Fasteignaverkefni"
+author: "Ingimar Logi Guðlaugsson ilg5@hi.is Veturliði Snær Gylfason vsg8@hi.is"
+output: 
+  rmdformats::readthedown
+---
+
+<style type="text/css">
+      body{
+      font-size: 14pt;
+      font-family: Times New Roman;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
+library(tidyverse)
+library(knitr)
+library(ggplot2)
+library(rmdformats)
+library(kableExtra)
+options(scipen = 999)
+```
+
+# Hluti 1 (10 %)
+
+## a)
+Lesum inn gögnin okkar:
+```{r}
+iv <- read.table("https://notendur.hi.is/~ahj/husnaedisverd_2017_21.csv", 
+                 encoding = "UTF-8", sep = ";", header =T, stringsAsFactors = T)
+```
+
+
+## b)
+Veljum þrjú hverfi: 11 = Vesturbær, 80 = Hlíðar og 110 = Bryggjuhverfi.
+
+```{r}
+matssvaedi.nota <- c("11", "80", "110")
+
+iv <- filter(iv, matssvaedi%in%matssvaedi.nota)
+```
+
+## c) 
+Kannið gerð breytanna og breytið gerð þeirra sem eru ekki af réttri gerð (ef einhverjar).
+```{r}
+# Könnum gerð breyta:
+str(iv)
+```
+
+matssvaedi er int en við viljum breyta því í factor breytu.
+```{r}
+iv <- mutate(iv, matssvaedi = factor(matssvaedi))
+# Athugum hvort breytingin heppnaðist:
+str(iv)
+```
+
+## d) 
+Búið til nýja breytu í gagnarammanum ykkar sem inniheldur fermetraverð eignanna, nefnið breytuna fermetraverd.
+```{r}
+iv$fermetraverd <- iv$kaupverd/iv$birtm2
+```
+
+## e) 
+Búið til nýja breytu sem þið skulið kalla teg_eign_groft sem byggir á teg_eign breytunni. Breytan á að innihalda tvo flokka: Sérbýli (Einbýlishús, Parhús, Raðhús) og Íbúð (Íbúðareign). Ábending: notið fct_recode() aðferðina.
+```{r}
+
+iv$teg_eign_groft <- fct_recode(iv$teg_eign, "Sérbýli" = "Einbýlishús", 
+                             "Sérbýli" = "Parhús", "Sérbýli" = "Raðhús",
+                             "Íbúð" = "Íbúðareign")
+```
+
+## f) 
+Endurnefnið hverfin ykkar með lýsandi nöfnum (ekki kóðanum sem notaður er í gögnunum).
+```{r}
+matsv <- fct_recode(iv$matssvaedi, "Vesturbær" = "11", "Hlíðar" = "80",
+           "Bryggjuhverfi" = "110")
+iv$matssvaedi <- matsv
+```
+
+## g)
+Takið slemnbiúrtak úr gagnasafninu ykkar af stærð 300. Geymið úrtakið ykkar í hlut sem ber heitið urtak.
+
+
+# Hluti 2 (25 %)
+
+## h)
+
+## i)
+
+## j)
+
+# Hluti 3 (25 %)
+
+## k)
+
+## l)
+
+## m)
+
+# Hluti 4 (30%)
+
+## n)
+
+## o)
+
+## p)
+
+## q)
+
+
+
+
+
+
