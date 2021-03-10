@@ -33,7 +33,7 @@ iv <- read.table("https://notendur.hi.is/~ahj/husnaedisverd_2017_21.csv",
 
 
 ## b)
-Veljum þrjú hverfi: 11 = Vesturbær, 80 = Hlíðar og 110 = Bryggjuhverfi.
+Veljum þrjú hverfi: 11 = Vesturbær, 80 = Hlíðar og 110 = Bryggjuhverfi
 
 ```{r}
 matssvaedi.nota <- c("11", "80", "110")
@@ -79,20 +79,63 @@ iv$matssvaedi <- matsv
 ```
 
 ## g)
-Takið slemnbiúrtak úr gagnasafninu ykkar af stærð 300. Geymið úrtakið ykkar í hlut sem ber heitið urtak.
+Takið slembiúrtak úr gagnasafninu ykkar af stærð 300. Geymið úrtakið ykkar í hlut sem ber heitið urtak.
+```{r}
+set.seed(16)
+urtak <- sample_n(iv, 300)
+```
 
 
 # Hluti 2 (25 %)
 
 ## h)
+Búið til töflu sem sýnir fjölda eigna í hverfunum þremur eftir gerð eigna (sérbýli eða íbúðir).
+```{r}
+tab1 <- table(urtak$teg_eign_groft, urtak$matssvaedi)
+kable(tab1, align = "c") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"),
+                full_width = F,
+                font_size = 14,
+                position = "left")
+```
 
 ## i)
+Búið til töflu sem sýnir hlutfall sérbýla og íbúða í hverfunum þremur. Það á s.s. að vera hægt að lesa hvert hlutfall sérbýla og íbúða er í hverju hverfi fyrir sig.
+```{r}
+tab2 <- prop.table(table(urtak$teg_eign_groft, urtak$matssvaedi), margin = 2)
+kable(tab2, digits = 3, align = "c", ) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"),
+                full_width = F,
+                font_size = 14,
+                position = "left")
+```
+
 
 ## j)
+Kannið með viðeigandi tilgátuprófi hvort samband sé á milli hverfa og gerð eigna (sérbýli og íbúða). Sýnið úttakið úr prófinu. Eru forsendur til að nota prófið uppfylltar? Setjið tilgáturnar fram, tilgreinið gildið á prófstærðinni, p-gildið og hvaða ályktun þið dragið.
+```{r}
+chi_j <- chisq.test(table(urtak$teg_eign_groft, urtak$matssvaedi))
+chi_j$expected
+```
+Í töflu væntanlegrar tíðni hér fyrir ofan eru tölur sem eru minni en 5 og því getum við ekki uppfyllt forsendur þess að nota kí-kvaðrat próf til að álykta um samband á milli hverfa og tegund eigna í úrtaki okkar.
+Ef úrtakið væri stærra þá væru þær forsendur mögulega uppfylltar.
+
 
 # Hluti 3 (25 %)
 
 ## k)
+Kannið með viðeigandi tilgátuprófi hvort munur sé á meðfermetraverði fasteigna eftir því hvort þær séu sérbýli eða íbúðir. Setjið tilgáturnar fram, tilgreinið gildið á prófstærðinni, p-gildið og hvaða ályktun þið dragið.
+```{r}
+t_test1 <- t.test(urtak$fermetraverd ~ urtak$teg_eign_groft)
+t_test1
+```
+
+Tilgáturnar eru:
+$$
+H_0: \mu_1 - \mu_2 = \delta \\
+H_1: \mu_1 - \mu_2 \ne \delta
+$$
+Gildið á prófstærðinni er: `r round(t_test1$statistic, 3)` og p-gildið er `r round(t_test1$p.value, 3)`. Þar sem p-gildið er stærra en $\alpha$ þá getum við ekki hafnað $H_0$ og drögum því enga ályktun.
 
 ## l)
 

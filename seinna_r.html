@@ -1457,6 +1457,230 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+    <script>$(document).ready(function(){
+    if (typeof $('[data-toggle="tooltip"]').tooltip === 'function') {
+        $('[data-toggle="tooltip"]').tooltip();
+    }
+    if ($('[data-toggle="popover"]').popover === 'function') {
+        $('[data-toggle="popover"]').popover();
+    }
+});
+</script>
+    <style type="text/css">
+.lightable-minimal {
+border-collapse: separate;
+border-spacing: 16px 1px;
+width: 100%;
+margin-bottom: 10px;
+}
+.lightable-minimal td {
+margin-left: 5px;
+margin-right: 5px;
+}
+.lightable-minimal th {
+margin-left: 5px;
+margin-right: 5px;
+}
+.lightable-minimal thead tr:last-child th {
+border-bottom: 2px solid #00000050;
+empty-cells: hide;
+}
+.lightable-minimal tbody tr:first-child td {
+padding-top: 0.5em;
+}
+.lightable-minimal.lightable-hover tbody tr:hover {
+background-color: #f5f5f5;
+}
+.lightable-minimal.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-classic {
+border-top: 0.16em solid #111111;
+border-bottom: 0.16em solid #111111;
+width: 100%;
+margin-bottom: 10px;
+margin: 10px 5px;
+}
+.lightable-classic tfoot tr td {
+border: 0;
+}
+.lightable-classic tfoot tr:first-child td {
+border-top: 0.14em solid #111111;
+}
+.lightable-classic caption {
+color: #222222;
+}
+.lightable-classic td {
+padding-left: 5px;
+padding-right: 5px;
+color: #222222;
+}
+.lightable-classic th {
+padding-left: 5px;
+padding-right: 5px;
+font-weight: normal;
+color: #222222;
+}
+.lightable-classic thead tr:last-child th {
+border-bottom: 0.10em solid #111111;
+}
+.lightable-classic.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-classic.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-classic-2 {
+border-top: 3px double #111111;
+border-bottom: 3px double #111111;
+width: 100%;
+margin-bottom: 10px;
+}
+.lightable-classic-2 tfoot tr td {
+border: 0;
+}
+.lightable-classic-2 tfoot tr:first-child td {
+border-top: 3px double #111111;
+}
+.lightable-classic-2 caption {
+color: #222222;
+}
+.lightable-classic-2 td {
+padding-left: 5px;
+padding-right: 5px;
+color: #222222;
+}
+.lightable-classic-2 th {
+padding-left: 5px;
+padding-right: 5px;
+font-weight: normal;
+color: #222222;
+}
+.lightable-classic-2 tbody tr:last-child td {
+border-bottom: 3px double #111111;
+}
+.lightable-classic-2 thead tr:last-child th {
+border-bottom: 1px solid #111111;
+}
+.lightable-classic-2.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-classic-2.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-material {
+min-width: 100%;
+white-space: nowrap;
+table-layout: fixed;
+font-family: Roboto, sans-serif;
+border: 1px solid #EEE;
+border-collapse: collapse;
+margin-bottom: 10px;
+}
+.lightable-material tfoot tr td {
+border: 0;
+}
+.lightable-material tfoot tr:first-child td {
+border-top: 1px solid #EEE;
+}
+.lightable-material th {
+height: 56px;
+padding-left: 16px;
+padding-right: 16px;
+}
+.lightable-material td {
+height: 52px;
+padding-left: 16px;
+padding-right: 16px;
+border-top: 1px solid #eeeeee;
+}
+.lightable-material.lightable-hover tbody tr:hover {
+background-color: #f5f5f5;
+}
+.lightable-material.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-material.lightable-striped tbody td {
+border: 0;
+}
+.lightable-material.lightable-striped thead tr:last-child th {
+border-bottom: 1px solid #ddd;
+}
+.lightable-material-dark {
+min-width: 100%;
+white-space: nowrap;
+table-layout: fixed;
+font-family: Roboto, sans-serif;
+border: 1px solid #FFFFFF12;
+border-collapse: collapse;
+margin-bottom: 10px;
+background-color: #363640;
+}
+.lightable-material-dark tfoot tr td {
+border: 0;
+}
+.lightable-material-dark tfoot tr:first-child td {
+border-top: 1px solid #FFFFFF12;
+}
+.lightable-material-dark th {
+height: 56px;
+padding-left: 16px;
+padding-right: 16px;
+color: #FFFFFF60;
+}
+.lightable-material-dark td {
+height: 52px;
+padding-left: 16px;
+padding-right: 16px;
+color: #FFFFFF;
+border-top: 1px solid #FFFFFF12;
+}
+.lightable-material-dark.lightable-hover tbody tr:hover {
+background-color: #FFFFFF12;
+}
+.lightable-material-dark.lightable-striped tbody tr:nth-child(even) {
+background-color: #FFFFFF12;
+}
+.lightable-material-dark.lightable-striped tbody td {
+border: 0;
+}
+.lightable-material-dark.lightable-striped thead tr:last-child th {
+border-bottom: 1px solid #FFFFFF12;
+}
+.lightable-paper {
+width: 100%;
+margin-bottom: 10px;
+color: #444;
+}
+.lightable-paper tfoot tr td {
+border: 0;
+}
+.lightable-paper tfoot tr:first-child td {
+border-top: 1px solid #00000020;
+}
+.lightable-paper thead tr:last-child th {
+color: #666;
+vertical-align: bottom;
+border-bottom: 1px solid #00000020;
+line-height: 1.15em;
+padding: 10px 5px;
+}
+.lightable-paper td {
+vertical-align: middle;
+border-bottom: 1px solid #00000010;
+line-height: 1.15em;
+padding: 7px 5px;
+}
+.lightable-paper.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-paper.lightable-striped tbody tr:nth-child(even) {
+background-color: #00000008;
+}
+.lightable-paper.lightable-striped tbody td {
+border: 0;
+}
+</style>
     
     
         <style type="text/css">code{white-space: pre;}</style>
@@ -1680,7 +1904,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 <div id="b" class="section level2">
 <h2>b)</h2>
-<p>Veljum þrjú hverfi: 11 = Vesturbær, 80 = Hlíðar og 110 = Bryggjuhverfi.</p>
+<p>Veljum þrjú hverfi: 11 = Vesturbær, 80 = Hlíðar og 110 = Bryggjuhverfi</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>matssvaedi.nota &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;11&quot;</span>, <span class="st">&quot;80&quot;</span>, <span class="st">&quot;110&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a>iv &lt;-<span class="st"> </span><span class="kw">filter</span>(iv, matssvaedi<span class="op">%in%</span>matssvaedi.nota)</span></code></pre></div>
@@ -1728,25 +1952,161 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 <div id="g" class="section level2">
 <h2>g)</h2>
-<p>Takið slemnbiúrtak úr gagnasafninu ykkar af stærð 300. Geymið úrtakið ykkar í hlut sem ber heitið urtak.</p>
+<p>Takið slembiúrtak úr gagnasafninu ykkar af stærð 300. Geymið úrtakið ykkar í hlut sem ber heitið urtak.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">set.seed</span>(<span class="dv">16</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>urtak &lt;-<span class="st"> </span><span class="kw">sample_n</span>(iv, <span class="dv">300</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="hluti-2-25" class="section level1">
 <h1>Hluti 2 (25 %)</h1>
 <div id="h" class="section level2">
 <h2>h)</h2>
+<p>Búið til töflu sem sýnir fjölda eigna í hverfunum þremur eftir gerð eigna (sérbýli eða íbúðir).</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>tab1 &lt;-<span class="st"> </span><span class="kw">table</span>(urtak<span class="op">$</span>teg_eign_groft, urtak<span class="op">$</span>matssvaedi)</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">kable</span>(tab1, <span class="dt">align =</span> <span class="st">&quot;c&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>),</span>
+<span id="cb11-4"><a href="#cb11-4"></a>                <span class="dt">full_width =</span> F,</span>
+<span id="cb11-5"><a href="#cb11-5"></a>                <span class="dt">font_size =</span> <span class="dv">14</span>,</span>
+<span id="cb11-6"><a href="#cb11-6"></a>                <span class="dt">position =</span> <span class="st">&quot;left&quot;</span>)</span></code></pre></div>
+<table class="table table-striped table-hover" style="font-size: 14px; width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Vesturbær
+</th>
+<th style="text-align:center;">
+Hlíðar
+</th>
+<th style="text-align:center;">
+Bryggjuhverfi
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Sérbýli
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Íbúð
+</td>
+<td style="text-align:center;">
+64
+</td>
+<td style="text-align:center;">
+184
+</td>
+<td style="text-align:center;">
+29
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="i" class="section level2">
 <h2>i)</h2>
+<p>Búið til töflu sem sýnir hlutfall sérbýla og íbúða í hverfunum þremur. Það á s.s. að vera hægt að lesa hvert hlutfall sérbýla og íbúða er í hverju hverfi fyrir sig.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>tab2 &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(urtak<span class="op">$</span>teg_eign_groft, urtak<span class="op">$</span>matssvaedi), <span class="dt">margin =</span> <span class="dv">2</span>)</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="kw">kable</span>(tab2, <span class="dt">digits =</span> <span class="dv">3</span>, <span class="dt">align =</span> <span class="st">&quot;c&quot;</span>, ) <span class="op">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>),</span>
+<span id="cb12-4"><a href="#cb12-4"></a>                <span class="dt">full_width =</span> F,</span>
+<span id="cb12-5"><a href="#cb12-5"></a>                <span class="dt">font_size =</span> <span class="dv">14</span>,</span>
+<span id="cb12-6"><a href="#cb12-6"></a>                <span class="dt">position =</span> <span class="st">&quot;left&quot;</span>)</span></code></pre></div>
+<table class="table table-striped table-hover" style="font-size: 14px; width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Vesturbær
+</th>
+<th style="text-align:center;">
+Hlíðar
+</th>
+<th style="text-align:center;">
+Bryggjuhverfi
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Sérbýli
+</td>
+<td style="text-align:center;">
+0.099
+</td>
+<td style="text-align:center;">
+0.061
+</td>
+<td style="text-align:center;">
+0.121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Íbúð
+</td>
+<td style="text-align:center;">
+0.901
+</td>
+<td style="text-align:center;">
+0.939
+</td>
+<td style="text-align:center;">
+0.879
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="j" class="section level2">
 <h2>j)</h2>
+<p>Kannið með viðeigandi tilgátuprófi hvort samband sé á milli hverfa og gerð eigna (sérbýli og íbúða). Sýnið úttakið úr prófinu. Eru forsendur til að nota prófið uppfylltar? Setjið tilgáturnar fram, tilgreinið gildið á prófstærðinni, p-gildið og hvaða ályktun þið dragið.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>chi_j &lt;-<span class="st"> </span><span class="kw">chisq.test</span>(<span class="kw">table</span>(urtak<span class="op">$</span>teg_eign_groft, urtak<span class="op">$</span>matssvaedi))</span>
+<span id="cb13-2"><a href="#cb13-2"></a>chi_j<span class="op">$</span>expected</span></code></pre></div>
+<pre><code>##          
+##           Vesturbær    Hlíðar Bryggjuhverfi
+##   Sérbýli  5.443333  15.02667          2.53
+##   Íbúð    65.556667 180.97333         30.47</code></pre>
+<p>Í töflu væntanlegrar tíðni hér fyrir ofan eru tölur sem eru minni en 5 og því getum við ekki uppfyllt forsendur þess að nota kí-kvaðrat próf til að álykta um samband á milli hverfa og tegund eigna í úrtaki okkar. Ef úrtakið væri stærra þá væru þær forsendur mögulega uppfylltar.</p>
 </div>
 </div>
 <div id="hluti-3-25" class="section level1">
 <h1>Hluti 3 (25 %)</h1>
 <div id="k" class="section level2">
 <h2>k)</h2>
+<p>Kannið með viðeigandi tilgátuprófi hvort munur sé á meðfermetraverði fasteigna eftir því hvort þær séu sérbýli eða íbúðir. Setjið tilgáturnar fram, tilgreinið gildið á prófstærðinni, p-gildið og hvaða ályktun þið dragið.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>t_test1 &lt;-<span class="st"> </span><span class="kw">t.test</span>(urtak<span class="op">$</span>fermetraverd <span class="op">~</span><span class="st"> </span>urtak<span class="op">$</span>teg_eign_groft)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>t_test1</span></code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  urtak$fermetraverd by urtak$teg_eign_groft
+## t = -0.51644, df = 23.703, p-value = 0.6103
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -55.68503  33.40692
+## sample estimates:
+## mean in group Sérbýli    mean in group Íbúð 
+##              288.2937              299.4327</code></pre>
+<p>Tilgáturnar eru: <span class="math display">\[
+H_0: \mu_1 - \mu_2 = \delta \\
+H_1: \mu_1 - \mu_2 \ne \delta
+\]</span> Gildið á prófstærðinni er: -0.516 og p-gildið er 0.61. Þar sem p-gildið er stærra en <span class="math inline">\(\alpha\)</span> þá getum við ekki hafnað <span class="math inline">\(H_0\)</span> og drögum því enga ályktun.</p>
 </div>
 <div id="l" class="section level2">
 <h2>l)</h2>
