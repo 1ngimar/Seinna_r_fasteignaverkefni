@@ -108,7 +108,6 @@ kable(tab2, digits = 3, align = "c", ) %>%
                 full_width = F,
                 font_size = 14,
                 position = "left")
-tab2
 ```
 
 
@@ -173,7 +172,7 @@ Athugum fyrst með viðeigandi prófi hvort dreifnin á meðalfermetraverðinu s
 lm <- var.test(urtak$fermetraverd ~ urtak$staerd01)
 lm
 ```
-Miðað við að p-gildið úr fyrrgreindu prófi er `r lm$p.value` sem er minna en 0.05 að þá getum við ályktað að dreifnin sé ólík.
+Miðað við að p-gildið úr fyrrgreindu prófi er `r lm$p.value` sem er minna en $\alpha$ = 0.05 að þá getum við ályktað að dreifnin sé ólík.
 
 Þá framkvæmum við tvíhliða t-próf til að athuga hvort munur sé á meðalfermetraverði fasteigna eftir því hvort þær séu stærri eða minni en 150 fermetrar.
 
@@ -204,21 +203,23 @@ Kannið með viðeigandi tilgátuprófi hvort munur sé á meðalfermetraverði 
 
 Til að athuga hvort munur sé á meðaltali fleiri en tveggja hópa er nauðsynlegt að nota fervikagreiningu.
 Á myndinni sem við teiknuðum í lið n) er hægt að sjá að dreifnin á fermetraverðinu er nokkuð svipuð á milli hverfa og því eru forsendurnar fyrir því að nota fervikagreiningu uppfylltar.
-```{r}
-1 - pf(7.8033, 2, 297)
-```
 
 ```{r}
 fervik <- aov(fermetraverd ~ matssvaedi, data = urtak)
-anova(fervik)
-
+a_fervik <- anova(fervik)
+a_fervik
 ```
+```{r, echo=FALSE}
+fgildi1 <- (a_fervik$`F value`)[1]
+pgildi1 <- (a_fervik$`Pr(>F)`)[1]
+```
+
 Tilgáturnar eru:
 $$
 H_0: \mu_1 = \mu_2 = \mu_3 \\
 H_1: \text{A.m.k eitt meðaltal er frábrugðið hinum}
 $$
-Gildið á prófstærðinni er 7.8033 og p-gildið er 0.0004979. Fyrst að prófstærðin er greinilega stærri en p-gildið að þá höfnum við $H_0$ og ályktum að a.m.k eitt meðaltal sé frábrugðið hinum.
+Gildið á prófstærðinni er `r round(fgildi1, 3)` og p-gildið er `r round(pgildi1, 5)`. Fyrst að prófstærðin er greinilega stærri en p-gildið að þá höfnum við $H_0$ og ályktum að a.m.k eitt meðaltal sé frábrugðið hinum.
 
 ## p)
 Teiknið viðeigandi mynd af breytunum birtm2 og kaupverd. Segið með nokkrum orðum hvort þið teljið viðeigandi að nota einfalt línulegt aðhvarf til að lýsa sambandinu á milli breytanna.
@@ -235,6 +236,11 @@ ggplot(data = p, aes(sample = .resid)) + stat_qq()
 Þar sem leifaritið lítur klárlega út fyrir að vera línulegt má draga þá ályktun að leifarnar séu óháðar og normaldreifðar með sömu dreifni.
 
 Þess vegna eru forsendur þess að nota línulega aðhvarfsgreiningu til staðar.
+Svona lítur myndin út með línulegu aðhvarfsgreiningunni:
+```{r}
+ggplot(urtak, aes(x = birtm2,y = kaupverd)) + geom_point() + xlab("Stærð í fermetrum") + ylab("Kaupverð í þúsundum króna") + geom_smooth(method='lm', se = F)
+```
+
 
 
 
